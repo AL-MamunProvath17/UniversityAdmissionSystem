@@ -15,7 +15,7 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	Logger logger = Logger.getLogger(DBConnection.class);
 
 	@Override
-	public String addApplication(ApplicationBean application)
+	public boolean addApplication(ApplicationBean application)
 			throws UASException {
 		Connection connection = null;
 		if (application == null)
@@ -37,11 +37,12 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 
 			if (callableStatement.execute()) {
 				logger.info("Invalid Insert Query");
-				return "wrong";
+				return false;
 			} else {
 				String applicationId = callableStatement.getString(8);
 				logger.info("Application Added Successfully");
-				return applicationId;
+				application.setApplicationId(applicationId);
+				return true;
 			}
 
 		} catch (SQLException e) {
