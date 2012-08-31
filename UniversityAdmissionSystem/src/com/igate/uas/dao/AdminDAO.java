@@ -7,7 +7,7 @@ import com.igate.uas.bean.ProgramsOfferedBean;
 import com.igate.uas.exception.UASException;
 
 public interface AdminDAO {
-
+	
 	public boolean addCollege(CollegeBean college) throws UASException;
 
 	public boolean addDegree(DegreeBean degree) throws UASException;
