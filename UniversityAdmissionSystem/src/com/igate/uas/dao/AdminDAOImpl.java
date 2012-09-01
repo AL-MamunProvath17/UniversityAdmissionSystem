@@ -2,7 +2,13 @@ package com.igate.uas.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import com.igate.uas.bean.CollegeBean;
 import com.igate.uas.bean.DegreeBean;
@@ -28,7 +34,7 @@ public class AdminDAOImpl implements AdminDAO {
 			callableStatement.setString(4, college.getCity());
 			callableStatement.setString(5, college.getState());
 			callableStatement.setString(6, college.getPincode());
-			
+
 			if (callableStatement.execute()) {
 				logger.info("Invalid Insert Query");
 				return false;
@@ -60,7 +66,7 @@ public class AdminDAOImpl implements AdminDAO {
 			CallableStatement callableStatement = connection
 					.prepareCall("{call au_proc_add_degree(?)}");
 			callableStatement.setString(1, degree.getDegreeName());
-			
+
 			if (callableStatement.execute()) {
 				logger.info("Invalid Insert Query");
 				return false;
@@ -86,7 +92,7 @@ public class AdminDAOImpl implements AdminDAO {
 	public boolean addDegreeToCollege(String collegeId, String degreeId)
 			throws UASException {
 		Connection connection = null;
-		if (collegeId==null || degreeId == null)
+		if (collegeId == null || degreeId == null)
 			throw new UASException("Empty Details");
 		try {
 			connection = DBConnection.getConnection();
@@ -119,7 +125,7 @@ public class AdminDAOImpl implements AdminDAO {
 	public boolean addProgramToDegree(String collegeId, String degreeId,
 			String programId) throws UASException {
 		Connection connection = null;
-		if (collegeId==null || degreeId == null || programId==null)
+		if (collegeId == null || degreeId == null || programId == null)
 			throw new UASException("Empty Details");
 		try {
 			connection = DBConnection.getConnection();
@@ -153,7 +159,7 @@ public class AdminDAOImpl implements AdminDAO {
 	public boolean assignMac(String scheduledProgramId, String loginId)
 			throws UASException {
 		Connection connection = null;
-		if (scheduledProgramId==null || loginId == null)
+		if (scheduledProgramId == null || loginId == null)
 			throw new UASException("Empty Details");
 		try {
 			connection = DBConnection.getConnection();
@@ -185,7 +191,7 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public boolean deleteDegree(DegreeBean degree) throws UASException {
 		Connection connection = null;
-		if (degree==null)
+		if (degree == null)
 			throw new UASException("Empty Details");
 		try {
 			connection = DBConnection.getConnection();
@@ -217,7 +223,7 @@ public class AdminDAOImpl implements AdminDAO {
 	public boolean deleteProgram(ProgramsOfferedBean programsOffered)
 			throws UASException {
 		Connection connection = null;
-		if (programsOffered ==null)
+		if (programsOffered == null)
 			throw new UASException("Empty Details");
 		try {
 			connection = DBConnection.getConnection();
@@ -249,16 +255,18 @@ public class AdminDAOImpl implements AdminDAO {
 	public boolean offerProgram(ProgramsOfferedBean programsOffered)
 			throws UASException {
 		Connection connection = null;
-		if (programsOffered ==null)
+		if (programsOffered == null)
 			throw new UASException("Empty Details");
 		try {
 			connection = DBConnection.getConnection();
 			CallableStatement callableStatement = connection
 					.prepareCall("{call au_proc_add_program(?,?,?,?,?)}");
 			callableStatement.setString(1, programsOffered.getProgramName());
-			callableStatement.setString(2, programsOffered.getApplicantEligibility());
+			callableStatement.setString(2, programsOffered
+					.getApplicantEligibility());
 			callableStatement.setInt(3, programsOffered.getDuration());
-			callableStatement.setString(4, programsOffered.getDegreeCertificateOffered());
+			callableStatement.setString(4, programsOffered
+					.getDegreeCertificateOffered());
 			callableStatement.setString(5, programsOffered.getDescription());
 			if (callableStatement.execute()) {
 				logger.info("Invalid Insert Query");
@@ -284,7 +292,7 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public boolean removeMac(String loginId) throws UASException {
 		Connection connection = null;
-		if (loginId ==null)
+		if (loginId == null)
 			throw new UASException("Empty Details");
 		try {
 			connection = DBConnection.getConnection();
@@ -316,20 +324,22 @@ public class AdminDAOImpl implements AdminDAO {
 	public boolean scheduleProgram(ProgramScheduledBean programScheduled)
 			throws UASException {
 		Connection connection = null;
-		if (programScheduled ==null)
+		if (programScheduled == null)
 			throw new UASException("Empty Details");
 		try {
 			connection = DBConnection.getConnection();
 			CallableStatement callableStatement = connection
 					.prepareCall("{call au_proc_schedule_program(?,?,?,?,?,?)}");
-			
-			callableStatement.setDate(1, new java.sql.Date(programScheduled.getStartDate().getTime()));
-			callableStatement.setDate(2, new java.sql.Date(programScheduled.getEndDate().getTime()));
+
+			callableStatement.setDate(1, new java.sql.Date(programScheduled
+					.getStartDate().getTime()));
+			callableStatement.setDate(2, new java.sql.Date(programScheduled
+					.getEndDate().getTime()));
 			callableStatement.setInt(3, programScheduled.getSessionPerWeek());
 			callableStatement.setString(4, programScheduled.getCollegeId());
 			callableStatement.setString(5, programScheduled.getDegreeId());
 			callableStatement.setString(6, programScheduled.getProgramId());
-			
+
 			if (callableStatement.execute()) {
 				logger.info("Invalid Insert Query");
 				return false;
@@ -362,7 +372,7 @@ public class AdminDAOImpl implements AdminDAO {
 					.prepareCall("{call au_proc_update_degree(?,?)}");
 			callableStatement.setString(1, degree.getDegreeId());
 			callableStatement.setString(2, degree.getDegreeName());
-			
+
 			if (callableStatement.execute()) {
 				logger.info("Invalid Update Query");
 				return false;
@@ -387,9 +397,8 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public boolean updateofferProgram(ProgramsOfferedBean programsOffered)
 			throws UASException {
-		
 		Connection connection = null;
-		if (programsOffered ==null)
+		if (programsOffered == null)
 			throw new UASException("Empty Details");
 		try {
 			connection = DBConnection.getConnection();
@@ -397,9 +406,11 @@ public class AdminDAOImpl implements AdminDAO {
 					.prepareCall("{call au_proc_update_program(?,?,?,?,?,?)}");
 			callableStatement.setString(1, programsOffered.getProgramId());
 			callableStatement.setString(2, programsOffered.getProgramName());
-			callableStatement.setString(3, programsOffered.getApplicantEligibility());
+			callableStatement.setString(3, programsOffered
+					.getApplicantEligibility());
 			callableStatement.setInt(4, programsOffered.getDuration());
-			callableStatement.setString(5, programsOffered.getDegreeCertificateOffered());
+			callableStatement.setString(5, programsOffered
+					.getDegreeCertificateOffered());
 			callableStatement.setString(6, programsOffered.getDescription());
 			if (callableStatement.execute()) {
 				logger.info("Invalid Update Query");
@@ -422,9 +433,180 @@ public class AdminDAOImpl implements AdminDAO {
 		}
 	}
 
+	// select mehtos
 
-	
+	@Override
+	public List<CollegeBean> getColleges() throws UASException {
+		Connection connection = null;
+		List<CollegeBean> colleges = new ArrayList<CollegeBean>();
+		try {
+			connection = DBConnection.getConnection();
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select * from au_college_master");
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				String collegeId = resultSet.getString(1);
+				String collegeName = resultSet.getString(2);
+				String street = resultSet.getString(3);
+				String landmark = resultSet.getString(4);
+				String city = resultSet.getString(5);
+				String state = resultSet.getString(6);
+				String pincode = resultSet.getString(7);
 
-	
+				colleges.add(new CollegeBean(collegeId, collegeName, street,
+						landmark, city, state, pincode));
+			}
+			return colleges;
+		} catch (SQLException e) {
+			logger.error(e.getMessage());
+			throw new UASException("College Retrival Failed");
+		} finally {
+			try {
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				logger.error(e.getMessage());
+				throw new UASException("Connection was unable to Close");
+			}
+		}
+	}
+
+	@Override
+	public List<DegreeBean> getDegrees() throws UASException {
+		Connection connection = null;
+		List<DegreeBean> degrees = new ArrayList<DegreeBean>();
+		try {
+			connection = DBConnection.getConnection();
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select * from au_degree_master");
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				String degreeId = resultSet.getString(1);
+				String degreeName = resultSet.getString(1);
+				degrees.add(new DegreeBean(degreeId, degreeName));
+			}
+			return degrees;
+		} catch (SQLException e) {
+			logger.error(e.getMessage());
+			throw new UASException("Degree Retrival Failed");
+		} finally {
+			try {
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				logger.error(e.getMessage());
+				throw new UASException("Connection was unable to Close");
+			}
+		}
+	}
+
+	@Override
+	public List<ProgramsOfferedBean> getOfferedPrograms() throws UASException {
+		Connection connection = null;
+		List<ProgramsOfferedBean> offeredPrograms = new ArrayList<ProgramsOfferedBean>();
+		try {
+			connection = DBConnection.getConnection();
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select * from au_program_offered");
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				String programId = resultSet.getString(1);
+				String programName = resultSet.getString(2);
+				String applicantEligibility = resultSet.getString(3);
+				int duration = resultSet.getInt(4);
+				String degreeCertificateOffered = resultSet.getString(5);
+				String description = resultSet.getString(6);
+
+				offeredPrograms.add(new ProgramsOfferedBean(programId, programName, applicantEligibility, duration, degreeCertificateOffered, description));
+			}
+			return offeredPrograms;
+		} catch (SQLException e) {
+			logger.error(e.getMessage());
+			throw new UASException("Offered Programs Retrival Failed");
+		} finally {
+			try {
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				logger.error(e.getMessage());
+				throw new UASException("Connection was unable to Close");
+			}
+		}
+	}
+
+	@Override
+	public List<ProgramScheduledBean> getScheduledPrograms()
+			throws UASException {
+		Connection connection = null;
+		List<ProgramScheduledBean> scheduledPrograms = new ArrayList<ProgramScheduledBean>();
+		try {
+			connection = DBConnection.getConnection();
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select * from au_program_scheduled");
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				String scheduledProgramId = resultSet.getString(1);
+				Date startDate= resultSet.getDate(2);
+				Date endDate= resultSet.getDate(3);
+				int sessionPerWeek= resultSet.getInt(4);
+				String collegeId= resultSet.getString(5);
+				String degreeId= resultSet.getString(6);
+				String programId= resultSet.getString(7);
+				
+				scheduledPrograms.add(new ProgramScheduledBean(scheduledProgramId, startDate, endDate, sessionPerWeek, collegeId, degreeId, programId));
+			}
+			return scheduledPrograms;
+		} catch (SQLException e) {
+			logger.error(e.getMessage());
+			throw new UASException("Scheduled Programs Retrival Failed");
+		} finally {
+			try {
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				logger.error(e.getMessage());
+				throw new UASException("Connection was unable to Close");
+			}
+		}
+	}
+
+	@Override
+	public List<ProgramScheduledBean> getScheduledPrograms(Date startDate,
+			Date endDate) throws UASException {
+		Connection connection = null;
+		List<ProgramScheduledBean> scheduledPrograms = new ArrayList<ProgramScheduledBean>();
+		try {
+			connection = DBConnection.getConnection();
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select * from au_program_scheduled where START_DATE = ? and END_DATE = ?");
+			preparedStatement.setDate(1, new java.sql.Date(startDate.getTime()));
+			preparedStatement.setDate(2, new java.sql.Date(endDate.getTime()));
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				String scheduledProgramId = resultSet.getString(1);
+				startDate= resultSet.getDate(2);
+				endDate= resultSet.getDate(3);
+				int sessionPerWeek= resultSet.getInt(4);
+				String collegeId= resultSet.getString(5);
+				String degreeId= resultSet.getString(6);
+				String programId= resultSet.getString(7);
+				
+				scheduledPrograms.add(new ProgramScheduledBean(scheduledProgramId, startDate, endDate, sessionPerWeek, collegeId, degreeId, programId));
+			}
+			return scheduledPrograms;
+		} catch (SQLException e) {
+			logger.error(e.getMessage());
+			throw new UASException("Scheduled Programs Retrival Failed");
+		} finally {
+			try {
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				logger.error(e.getMessage());
+				throw new UASException("Connection was unable to Close");
+			}
+		}
+	}
+
 	
 }

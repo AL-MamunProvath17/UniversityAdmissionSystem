@@ -1,4 +1,4 @@
-package com.igate.uas.dao;
+package com.igate.uas.service;
 
 import java.util.Date;
 import java.util.List;
@@ -9,7 +9,7 @@ import com.igate.uas.bean.ProgramScheduledBean;
 import com.igate.uas.bean.ProgramsOfferedBean;
 import com.igate.uas.exception.UASException;
 
-public interface AdminDAO {
+public interface AdminService {
 
 	public boolean addCollege(CollegeBean college) throws UASException;
 
@@ -40,8 +40,9 @@ public interface AdminDAO {
 	public boolean deleteProgram(ProgramsOfferedBean programsOffered)
 			throws UASException;
 
-	public boolean removeMac(String loginId) throws UASException;
-
+	public boolean removeMac(String loginId)
+			throws UASException;
+	
 	// select methods
 
 	public List<CollegeBean> getColleges() throws UASException;
@@ -53,7 +54,6 @@ public interface AdminDAO {
 	public List<ProgramScheduledBean> getScheduledPrograms()
 			throws UASException;
 
-	public List<ProgramScheduledBean> getScheduledPrograms(Date startDate,
-			Date endDate) throws UASException;
-	
+	public List<ProgramScheduledBean> getScheduledPrograms(Date startDate,Date endDate)
+	throws UASException;
 }
