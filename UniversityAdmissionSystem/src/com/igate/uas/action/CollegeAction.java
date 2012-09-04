@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ModelDriven;
 public class CollegeAction extends ActionSupport implements
 		ModelDriven<CollegeBean> {
 
-	CollegeBean college;
+	CollegeBean college = new CollegeBean();
 	AdminService adminService;
 	
 	@Override
@@ -19,10 +19,17 @@ public class CollegeAction extends ActionSupport implements
 		return college;
 	}
 
-	protected String addCollege() throws Exception {
+	public String addCollege() throws Exception {
 		AdminService adminService = getServiceObject();
 		boolean result = adminService.addCollege(college);
-		return result?SUCCESS:INPUT;
+		if(result){
+			addActionMessage("Collge Added Successfully");
+			return SUCCESS;
+		}
+		else{
+			addActionError("Not Added");
+			return INPUT;
+		}
 	}
 
 	private AdminService getServiceObject() throws UASException

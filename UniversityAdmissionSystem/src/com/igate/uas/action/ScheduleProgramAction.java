@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ModelDriven;
 public class ScheduleProgramAction extends ActionSupport implements
 		ModelDriven<ProgramScheduledBean> {
 
-	ProgramScheduledBean programScheduled;
+	ProgramScheduledBean programScheduled = new ProgramScheduledBean();
 	AdminService adminService;
 
 	@Override
@@ -19,16 +19,31 @@ public class ScheduleProgramAction extends ActionSupport implements
 		return programScheduled;
 	}
 
-	protected String scheduleProgram() throws Exception {
+	public String scheduleProgram() throws Exception {
 		AdminService adminService = getServiceObject();
 		boolean result = adminService.scheduleProgram(programScheduled);
-		return result ? SUCCESS : INPUT;
+		if(result){
+			addActionMessage("Program Scheduled Successfully");
+			return SUCCESS;
+		}
+		else{
+			addActionError("Not Scheduled");
+			return INPUT;
+		}
 	}
-
+	
 	private AdminService getServiceObject() throws UASException {
 		if (adminService == null)
 			adminService = new AdminServiceImpl();
 		return adminService;
+	}
+
+	public ProgramScheduledBean getProgramScheduled() {
+		return programScheduled;
+	}
+
+	public void setProgramScheduled(ProgramScheduledBean programScheduled) {
+		this.programScheduled = programScheduled;
 	}
 
 }

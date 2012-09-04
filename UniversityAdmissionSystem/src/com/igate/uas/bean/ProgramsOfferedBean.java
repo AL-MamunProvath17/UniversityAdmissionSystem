@@ -113,4 +113,15 @@ public class ProgramsOfferedBean {
 		this.description = description;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		ProgramsOfferedBean anotherObect = (ProgramsOfferedBean) obj;
+		return this.programId.equals(anotherObect.getProgramId());
+	}
+
+	@Override
+	public int hashCode() {
+		return this.programId.hashCode();
+	}
+
 }

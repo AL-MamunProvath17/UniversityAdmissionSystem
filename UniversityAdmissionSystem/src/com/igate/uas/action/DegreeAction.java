@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ModelDriven;
 public class DegreeAction extends ActionSupport implements
 		ModelDriven<DegreeBean> {
 
-	DegreeBean degree;
+	DegreeBean degree = new DegreeBean();
 	AdminService adminService;
 	
 	@Override
@@ -22,7 +22,14 @@ public class DegreeAction extends ActionSupport implements
 	public String addDegree() throws Exception{
 		AdminService adminService = getServiceObject();
 		boolean result = adminService.addDegree(degree);
-		return result?SUCCESS:INPUT;
+		if(result){
+			addActionMessage("Degree Added Successfully");
+			return SUCCESS;
+		}
+		else{
+			addActionError("Not Added");
+			return INPUT;
+		}
 	}
 	
 	private AdminService getServiceObject() throws UASException

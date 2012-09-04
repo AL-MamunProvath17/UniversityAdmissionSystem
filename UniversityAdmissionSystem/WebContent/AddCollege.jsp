@@ -11,13 +11,14 @@
 <%@taglib uri="/struts-tags" prefix="s"%>
 
 <s:form action="AddCollegeAction">
-	<s:textfield name="collegeName" label="Degree Name" />
+	<s:textfield name="collegeName" label="College Name" />
 	<s:textfield name="street" label="Street" />
 	<s:textfield name="landmark" label="Landmark" />
 	<s:textfield name="city" label="City" />
 	<s:textfield name="state" label="State" />
 	<s:textfield name="pincode" label="Pincode" />
+	<s:submit/>
 </s:form>
-
+<s:actionmessage/>
 </body>
 </html>

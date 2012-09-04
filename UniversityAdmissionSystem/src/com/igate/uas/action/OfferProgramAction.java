@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ModelDriven;
 public class OfferProgramAction extends ActionSupport implements
 		ModelDriven<ProgramsOfferedBean> {
 
-	ProgramsOfferedBean programsOffered;
+	ProgramsOfferedBean programsOffered = new ProgramsOfferedBean();
 	AdminService adminService;
 
 	@Override
@@ -22,7 +22,14 @@ public class OfferProgramAction extends ActionSupport implements
 	public String offerProgram() throws Exception {
 		AdminService adminService = getServiceObject();
 		boolean result = adminService.offerProgram(programsOffered);
-		return result ? SUCCESS : INPUT;
+		if(result){
+			addActionMessage("Program Added Successfully");
+			return SUCCESS;
+		}
+		else{
+			addActionError("Not Added");
+			return INPUT;
+		}
 	}
 
 	private AdminService getServiceObject() throws UASException {

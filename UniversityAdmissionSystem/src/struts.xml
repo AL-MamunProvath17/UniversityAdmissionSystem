@@ -14,10 +14,59 @@
 				result="error" />
 		</global-exception-mappings>
 
-		<action name="LoadData" class="com.igate.uas.action.AdminAction"
+		<action name="LoadCollegeDegree" class="com.igate.uas.action.AdminAction"
 			method="loadData">
 			<result name="success">/AddDegreeToCollege.jsp</result>
 			<result name="input">/index.jsp</result>
+		</action>
+
+		<action name="LoadCollegeDegreeProgram" class="com.igate.uas.action.AdminAction"
+			method="loadData">
+			<result name="success">/AddProgramToDegree.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+
+		<action name="LoadScheduleDataAction" class="com.igate.uas.action.AdminAction"
+			method="LoadScheduleData">
+			<result name="success">/ScheduleProgram.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+
+		<action name="ScheduleProgramAction" class="com.igate.uas.action.ScheduleProgramAction"
+			method="scheduleProgram">
+			<result name="success">/ScheduleProgram.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+
+		<action name="temp">
+			<result name="success">/ScheduleProgram.jsp</result>
+		</action>
+
+		<action name="addDegreeToCollege" class="com.igate.uas.action.AdminAction"
+			method="addDegreeToCollege">
+			<result>/AddDegreeToCollege.jsp</result>
+		</action>
+		<action name="addProgramToDegree" class="com.igate.uas.action.AdminAction"
+			method="addProgramToDegree">
+			<result>/AddProgramToDegree.jsp</result>
+		</action>
+
+		<action name="AddCollegeAction" class="com.igate.uas.action.CollegeAction"
+			method="addCollege">
+			<result name="success">/AddCollege.jsp</result>
+			<result name="input">/AddCollege.jsp</result>
+		</action>
+		
+		<action name="AddDegreeAction" class="com.igate.uas.action.DegreeAction"
+			method="addDegree">
+			<result name="success">/AddDegree.jsp</result>
+			<result name="input">/AddDegree.jsp</result>
+		</action>
+		
+		<action name="OfferProgramAction" class="com.igate.uas.action.OfferProgramAction"
+			method="offerProgram">
+			<result name="success">/OfferProgram.jsp</result>
+			<result name="input">/OfferProgram.jsp</result>
 		</action>
 
 	</package>

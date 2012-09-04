@@ -15,8 +15,9 @@
 	<s:textfield name="applicantEligibility" label="Applicant Eligibility" />
 	<s:textfield name="duration" label="Duration" />
 	<s:textfield name="degreeCertificateOffered" label="Degree Certificate Offered" />
-	<s:textfield name="description" label="Description" />
+	<s:textarea name="description" label="Description" />
+	<s:submit/>
 </s:form>
-
+<s:actionmessage/>
 </body>
 </html>

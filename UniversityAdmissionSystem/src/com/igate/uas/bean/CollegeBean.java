@@ -133,4 +133,22 @@ public class CollegeBean implements Serializable{
 		this.pincode = pincode;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		CollegeBean anotherObject = (CollegeBean) obj;
+		return this.collegeId.equals(anotherObject.getCollegeId());
+	}
+
+	@Override
+	public int hashCode() {
+		return this.collegeId.hashCode();
+	}
+
+	@Override
+	public String toString() {
+		return this.collegeId;
+	}
+
+	
+	
 }

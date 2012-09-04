@@ -7,7 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import com.igate.uas.bean.CollegeBean;
@@ -442,7 +444,7 @@ public class AdminDAOImpl implements AdminDAO {
 		try {
 			connection = DBConnection.getConnection();
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from au_college_master");
+					.prepareStatement("select * from getcolleges");
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				String collegeId = resultSet.getString(1);
@@ -482,7 +484,7 @@ public class AdminDAOImpl implements AdminDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				String degreeId = resultSet.getString(1);
-				String degreeName = resultSet.getString(1);
+				String degreeName = resultSet.getString(2);
 				degrees.add(new DegreeBean(degreeId, degreeName));
 			}
 			return degrees;
@@ -517,7 +519,9 @@ public class AdminDAOImpl implements AdminDAO {
 				String degreeCertificateOffered = resultSet.getString(5);
 				String description = resultSet.getString(6);
 
-				offeredPrograms.add(new ProgramsOfferedBean(programId, programName, applicantEligibility, duration, degreeCertificateOffered, description));
+				offeredPrograms.add(new ProgramsOfferedBean(programId,
+						programName, applicantEligibility, duration,
+						degreeCertificateOffered, description));
 			}
 			return offeredPrograms;
 		} catch (SQLException e) {
@@ -546,14 +550,16 @@ public class AdminDAOImpl implements AdminDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				String scheduledProgramId = resultSet.getString(1);
-				Date startDate= resultSet.getDate(2);
-				Date endDate= resultSet.getDate(3);
-				int sessionPerWeek= resultSet.getInt(4);
-				String collegeId= resultSet.getString(5);
-				String degreeId= resultSet.getString(6);
-				String programId= resultSet.getString(7);
-				
-				scheduledPrograms.add(new ProgramScheduledBean(scheduledProgramId, startDate, endDate, sessionPerWeek, collegeId, degreeId, programId));
+				Date startDate = resultSet.getDate(2);
+				Date endDate = resultSet.getDate(3);
+				int sessionPerWeek = resultSet.getInt(4);
+				String collegeId = resultSet.getString(5);
+				String degreeId = resultSet.getString(6);
+				String programId = resultSet.getString(7);
+
+				scheduledPrograms.add(new ProgramScheduledBean(
+						scheduledProgramId, startDate, endDate, sessionPerWeek,
+						collegeId, degreeId, programId));
 			}
 			return scheduledPrograms;
 		} catch (SQLException e) {
@@ -579,19 +585,22 @@ public class AdminDAOImpl implements AdminDAO {
 			connection = DBConnection.getConnection();
 			PreparedStatement preparedStatement = connection
 					.prepareStatement("select * from au_program_scheduled where START_DATE = ? and END_DATE = ?");
-			preparedStatement.setDate(1, new java.sql.Date(startDate.getTime()));
+			preparedStatement
+					.setDate(1, new java.sql.Date(startDate.getTime()));
 			preparedStatement.setDate(2, new java.sql.Date(endDate.getTime()));
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				String scheduledProgramId = resultSet.getString(1);
-				startDate= resultSet.getDate(2);
-				endDate= resultSet.getDate(3);
-				int sessionPerWeek= resultSet.getInt(4);
-				String collegeId= resultSet.getString(5);
-				String degreeId= resultSet.getString(6);
-				String programId= resultSet.getString(7);
-				
-				scheduledPrograms.add(new ProgramScheduledBean(scheduledProgramId, startDate, endDate, sessionPerWeek, collegeId, degreeId, programId));
+				startDate = resultSet.getDate(2);
+				endDate = resultSet.getDate(3);
+				int sessionPerWeek = resultSet.getInt(4);
+				String collegeId = resultSet.getString(5);
+				String degreeId = resultSet.getString(6);
+				String programId = resultSet.getString(7);
+
+				scheduledPrograms.add(new ProgramScheduledBean(
+						scheduledProgramId, startDate, endDate, sessionPerWeek,
+						collegeId, degreeId, programId));
 			}
 			return scheduledPrograms;
 		} catch (SQLException e) {
@@ -608,5 +617,65 @@ public class AdminDAOImpl implements AdminDAO {
 		}
 	}
 
-	
+	@Override
+	public Map<CollegeBean, Map<DegreeBean, List<ProgramsOfferedBean>>> getCollgeDegreeProgram()
+			throws UASException {
+		Connection connection = null;
+		Map<CollegeBean, Map<DegreeBean, List<ProgramsOfferedBean>>> collegeMap = new HashMap<CollegeBean, Map<DegreeBean, List<ProgramsOfferedBean>>>();
+		try {
+			connection = DBConnection.getConnection();
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select * from collegeDegreeProgram");
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+
+				String collegeId = resultSet.getString(1);
+				String collegeName = resultSet.getString(2);
+				String degreeId = resultSet.getString(3);
+				String degreeName = resultSet.getString(4);
+				String programId = resultSet.getString(5);
+				String programName = resultSet.getString(6);
+				String description = resultSet.getString(6);
+
+				CollegeBean college = new CollegeBean();
+				college.setCollegeId(collegeId);
+				college.setCollegeName(collegeName);
+
+				DegreeBean degree = new DegreeBean();
+				degree.setDegreeId(degreeId);
+				degree.setDegreeName(degreeName);
+
+				ProgramsOfferedBean offeredProgram = new ProgramsOfferedBean();
+				offeredProgram.setProgramId(programId);
+				offeredProgram.setProgramName(programName);
+				offeredProgram.setDescription(description);
+
+				Map<DegreeBean, List<ProgramsOfferedBean>> degreeMap = collegeMap
+						.get(college);
+				degreeMap = (degreeMap == null) ? new HashMap<DegreeBean, List<ProgramsOfferedBean>>()
+						: degreeMap;
+
+				List<ProgramsOfferedBean> offeredProgramList = degreeMap
+						.get(degree);
+				offeredProgramList = (offeredProgramList == null) ? new ArrayList<ProgramsOfferedBean>()
+						: offeredProgramList;
+
+				offeredProgramList.add(offeredProgram);
+				degreeMap.put(degree, offeredProgramList);
+				collegeMap.put(college, degreeMap);
+			}
+			return collegeMap;
+		} catch (SQLException e) {
+			logger.error(e.getMessage());
+			throw new UASException("Scheduled Programs Retrival Failed");
+		} finally {
+			try {
+				if (connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				logger.error(e.getMessage());
+				throw new UASException("Connection was unable to Close");
+			}
+		}
+	}
 }

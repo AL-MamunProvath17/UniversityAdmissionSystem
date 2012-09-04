@@ -10,10 +10,19 @@
 
 <%@taglib uri="/struts-tags" prefix="s"%>
 
-<s:form action="AddDegreeAction">
-	<s:textfield name="degreeName" label="Degree Name" />
+<s:form action="addProgramToDegree">
+
+	<s:select list="#session.colleges" listKey="collegeId"
+		listValue="collegeName" name="college.collegeId"/>
+	<s:select list="#session.degrees" listKey="degreeId"
+		listValue="degreeName" name="degree.degreeId"/>
+		
+	<s:select list="#session.offeredPrograms" listKey="programId"
+		listValue="programName" name="offeredProgram.programId"/>
 	<s:submit/>
 </s:form>
+
 <s:actionmessage/>
+
 </body>
 </html>

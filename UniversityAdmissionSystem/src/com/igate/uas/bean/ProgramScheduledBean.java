@@ -132,4 +132,16 @@ public class ProgramScheduledBean {
 		this.programId = programId;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		ProgramScheduledBean anotherObject = (ProgramScheduledBean) obj;
+		return this.scheduledProgramId.equals(anotherObject
+				.getScheduledProgramId());
+	}
+
+	@Override
+	public int hashCode() {
+		return this.scheduledProgramId.hashCode();
+	}
+
 }

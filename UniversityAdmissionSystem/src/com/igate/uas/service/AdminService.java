@@ -2,6 +2,7 @@ package com.igate.uas.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import com.igate.uas.bean.CollegeBean;
 import com.igate.uas.bean.DegreeBean;
@@ -56,4 +57,13 @@ public interface AdminService {
 
 	public List<ProgramScheduledBean> getScheduledPrograms(Date startDate,Date endDate)
 	throws UASException;
+	
+	public Map<CollegeBean, Map<DegreeBean, List<ProgramsOfferedBean>>> getCollgeDegreeProgram()
+	throws UASException;
+	
+	// xml methods
+	
+	public void createNavigationXML() throws UASException;
+	
+	public void createContentXML() throws UASException;
 }

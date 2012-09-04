@@ -42,4 +42,17 @@ public class DegreeBean {
 		this.degreeName = degreeName;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		DegreeBean anotherObject = (DegreeBean) obj;
+		return this.degreeId.equals(anotherObject.getDegreeId());
+	}
+
+	@Override
+	public int hashCode() {
+		return this.degreeId.hashCode();
+	}
+
+	
+	
 }
