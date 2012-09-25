@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"  
+"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<field name="degreeName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Enter Degree name.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">2</param>
+			<message>Degree name must be at least ${minLength} characters.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<message>Degree name must be at most ${maxLength} characters.</message>
+		</field-validator>
+	</field>
+	
+</validators>

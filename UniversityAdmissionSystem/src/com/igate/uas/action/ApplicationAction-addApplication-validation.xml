@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"  
+"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<field name="fullName">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>Name should not be empty.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">2</param>
+			<param name="maxLength">20</param>
+			<message>Name must be between ${minLength} to ${maxLength} characters</message>
+		</field-validator>
+
+	</field>
+
+	<field name="dateOfBirth">
+		<field-validator type="required" short-circuit="true">
+			<param name="trim">true</param>
+			<message>Date of birth required.</message>
+		</field-validator>
+		<field-validator type="date">
+			<param name="min">01/01/1970</param>
+			<param name="max">01/01/2000</param>
+			<message>Date of birth must be between ${min} and ${max}.</message>
+		</field-validator>
+	</field>
+
+	<field name="highestQualification">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>Please enter your Highest Qualification.</message>
+		</field-validator>
+	</field>
+
+	<field name="marks_obtained">
+
+		<field-validator type="required" short-circuit="true">
+			<param name="trim">true</param>
+			<message>Please enter your percentage.</message>
+		</field-validator>
+
+		<field-validator type="double">
+			<param name="minExclusive">0.123</param>
+			<param name="maxExclusive">99.98</param>
+			<message>Enter valid percentage</message>
+		</field-validator>
+	</field>
+
+	<field name="goals">
+		<field-validator type="stringlength">
+			<param name="maxLength">60</param>
+			<message>Write your goals with in 60 characters.</message>
+		</field-validator>
+	</field>
+
+	<field name="email_id">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>Please enter your email address.</message>
+		</field-validator>
+
+		<field-validator type="email">
+			<param name="trim">true</param>
+			<message>Please enter a valid email.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">30</param>
+			<message>Email id should not exceed 30 characters.</message>
+		</field-validator>
+	</field>
+
+	<validator type="expression">
+		<param name="expression"> highestQualification != "-1" </param>
+		<message>Please select your highest qualification.</message>
+	</validator>
+
+</validators>

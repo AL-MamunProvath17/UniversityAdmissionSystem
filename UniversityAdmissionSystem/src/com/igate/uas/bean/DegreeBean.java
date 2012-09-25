@@ -1,6 +1,9 @@
 package com.igate.uas.bean;
 
-public class DegreeBean {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class DegreeBean implements Serializable{
 	private String degreeId;
 	private String degreeName;
 

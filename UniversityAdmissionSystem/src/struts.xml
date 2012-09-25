@@ -4,7 +4,7 @@
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-	<package name="default" extends="struts-default" namespace="/">
+	<package name="default" extends="struts-default" namespace="/Resources/Admin">
 		<global-results>
 			<result name="error">/error.jsp</result>
 		</global-results>
@@ -16,58 +16,226 @@
 
 		<action name="LoadCollegeDegree" class="com.igate.uas.action.AdminAction"
 			method="loadData">
-			<result name="success">/AddDegreeToCollege.jsp</result>
+			<result name="success">/Resources/Admin/AddDegreeToCollege.jsp</result>
 			<result name="input">/index.jsp</result>
+		</action>
+
+		<action name="degreeToCollege">
+			<result name="success">/Resources/Admin/AddDegreeToCollege.jsp</result>
 		</action>
 
 		<action name="LoadCollegeDegreeProgram" class="com.igate.uas.action.AdminAction"
 			method="loadData">
-			<result name="success">/AddProgramToDegree.jsp</result>
+			<result name="success">/Resources/Admin/AddProgramToDegree.jsp</result>
 			<result name="input">/index.jsp</result>
+		</action>
+
+		<action name="offer">
+			<result name="success">/Resources/Admin/AddProgramToDegree.jsp</result>
 		</action>
 
 		<action name="LoadScheduleDataAction" class="com.igate.uas.action.AdminAction"
 			method="LoadScheduleData">
-			<result name="success">/ScheduleProgram.jsp</result>
+			<result name="success">/Resources/Admin/ScheduleProgram.jsp</result>
 			<result name="input">/index.jsp</result>
+		</action>
+
+		<action name="schedule">
+			<result name="success">/Resources/Admin/ScheduleProgram.jsp</result>
 		</action>
 
 		<action name="ScheduleProgramAction" class="com.igate.uas.action.ScheduleProgramAction"
 			method="scheduleProgram">
-			<result name="success">/ScheduleProgram.jsp</result>
-			<result name="input">/index.jsp</result>
-		</action>
-
-		<action name="temp">
-			<result name="success">/ScheduleProgram.jsp</result>
+			<result name="success">/Resources/Admin/ScheduleProgram.jsp</result>
+			<result name="input">/Resources/Admin/ScheduleProgram.jsp</result>
 		</action>
 
 		<action name="addDegreeToCollege" class="com.igate.uas.action.AdminAction"
 			method="addDegreeToCollege">
-			<result>/AddDegreeToCollege.jsp</result>
+			<result name="success">/Resources/Admin/AddDegreeToCollege.jsp</result>
+			<result name="input">/Resources/Admin/AddDegreeToCollege.jsp</result>
 		</action>
 		<action name="addProgramToDegree" class="com.igate.uas.action.AdminAction"
 			method="addProgramToDegree">
-			<result>/AddProgramToDegree.jsp</result>
+			<result>/Resources/Admin/AddProgramToDegree.jsp</result>
+			<result name="input">/Resources/Admin/AddProgramToDegree.jsp</result>
 		</action>
 
 		<action name="AddCollegeAction" class="com.igate.uas.action.CollegeAction"
 			method="addCollege">
-			<result name="success">/AddCollege.jsp</result>
-			<result name="input">/AddCollege.jsp</result>
+			<result name="success">/Resources/Admin/AddCollege.jsp</result>
+			<result name="input">/Resources/Admin/AddCollege.jsp</result>
 		</action>
-		
+
 		<action name="AddDegreeAction" class="com.igate.uas.action.DegreeAction"
 			method="addDegree">
-			<result name="success">/AddDegree.jsp</result>
-			<result name="input">/AddDegree.jsp</result>
+			<result name="success">/Resources/Admin/AddDegree.jsp</result>
+			<result name="input">/Resources/Admin/AddDegree.jsp</result>
 		</action>
-		
+
 		<action name="OfferProgramAction" class="com.igate.uas.action.OfferProgramAction"
 			method="offerProgram">
-			<result name="success">/OfferProgram.jsp</result>
-			<result name="input">/OfferProgram.jsp</result>
+			<result name="success">/Resources/Admin/OfferProgram.jsp</result>
+			<result name="input">/Resources/Admin/OfferProgram.jsp</result>
+		</action>
+
+		<action name="LoadMacMembers" class="com.igate.uas.action.AdminAction"
+			method="LoadMacMembers">
+			<result name="success">/Resources/Admin/assignMac.jsp</result>
+			<result name="input">/Resources/Admin/assignMac.jsp</result>
+		</action>
+
+		<action name="assignMac" class="com.igate.uas.action.AdminAction"
+			method="assignMac">
+			<result name="success">/Resources/Admin/assignMac.jsp</result>
+			<result name="input">/Resources/Admin/assignMac.jsp</result>
+		</action>
+
+		<action name="removeMac" class="com.igate.uas.action.AdminAction"
+			method="removeMac">
+			<result name="success">/Resources/Admin/assignMac.jsp</result>
+			<result name="input">/Resources/Admin/assignMac.jsp</result>
+		</action>
+
+		<action name="LoadCollege" class="com.igate.uas.action.AdminAction"
+			method="loadCollege">
+			<result name="success">/Resources/Admin/ManageCollege.jsp</result>
+			<result name="input">/Resources/Admin/ManageCollege.jsp</result>
+		</action>
+
+		<action name="editCollege" class="com.igate.uas.action.AdminAction"
+			method="editCollege">
+			<result name="success">/Resources/Admin/EditCollege.jsp</result>
+			<result name="input">/Resources/Admin/EditCollege.jsp</result>
+		</action>
+		<action name="deleteCollege" class="com.igate.uas.action.AdminAction"
+			method="deleteCollege">
+			<result name="success">/Resources/Admin/ManageCollege.jsp</result>
+			<result name="input">/Resources/Admin/ManageCollege.jsp</result>
+		</action>
+
+
+		<action name="UpdateCollegeAction" class="com.igate.uas.action.CollegeAction"
+			method="updateCollege">
+			<result name="success">/Resources/Admin/EditCollege.jsp</result>
+			<result name="input">/Resources/Admin/EditCollege.jsp</result>
+		</action>
+
+		<action name="LoadPrograms" class="com.igate.uas.action.AdminAction"
+			method="loadPrograms">
+			<result name="success">/Resources/Admin/ManageofferProgram.jsp</result>
+			<result name="input">/Resources/Admin/ManageofferProgram.jsp</result>
+		</action>
+
+		<action name="editProgram" class="com.igate.uas.action.AdminAction"
+			method="editProgram">
+			<result name="success">/Resources/Admin/EditOfferProgram.jsp</result>
+			<result name="input">/Resources/Admin/EditOfferProgram.jsp</result>
+		</action>
+		<action name="deleteProgram" class="com.igate.uas.action.AdminAction"
+			method="deleteProgram">
+			<result name="success">/Resources/Admin/ManageofferProgram.jsp</result>
+			<result name="input">/Resources/Admin/ManageofferProgram.jsp</result>
+		</action>
+
+		<action name="UpdateOfferProgramAction" class="com.igate.uas.action.OfferProgramAction"
+			method="updateOfferProgram">
+			<result name="success">/Resources/Admin/EditOfferProgram.jsp</result>
+			<result name="input">/Resources/Admin/EditOfferProgram.jsp</result>
 		</action>
 
 	</package>
+
+	<package name="Login" extends="struts-default" namespace="/">
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+		<action name="login" class="com.igate.uas.action.LoginAction"
+			method="login">
+			<result name="admin" type="redirect">/Administrator.jsp</result>
+			<result type="chain" name="mac">
+				<param name="namespace">/</param>
+				<param name="actionName">loadMac</param>
+			</result>
+			<result name="input">/HomePage.jsp</result>
+		</action>
+
+		<action name="loadMac" class="com.igate.uas.action.MacAction"
+			method="getApplicantList">
+			<result name="success" type="redirect">/MacHome.jsp</result>
+		</action>
+
+		<action name="logout" class="com.igate.uas.action.MacAction"
+			method="logOut">
+			<result name="success" type="redirect">/HomePage.jsp</result>
+		</action>
+
+	</package>
+
+	<package name="MAC" extends="struts-default" namespace="/">
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+		<action name="getApplied" class="com.igate.uas.action.MacAction"
+			method="getApplied">
+			<result name="success">/MacHome.jsp</result>
+		</action>
+
+		<action name="getAccepted" class="com.igate.uas.action.MacAction"
+			method="getAccepted">
+			<result name="success">/MacHome.jsp</result>
+		</action>
+
+		<action name="getConfirmed" class="com.igate.uas.action.MacAction"
+			method="getConfirmed">
+			<result name="success">/MacHome.jsp</result>
+		</action>
+		<action name="getRejected" class="com.igate.uas.action.MacAction"
+			method="getRejected">
+			<result name="success">/MacHome.jsp</result>
+		</action>
+
+		<action name="setStatus" class="com.igate.uas.action.MacAction"
+			method="setStatus">
+			<result name="success">/MacHome.jsp</result>
+		</action>
+
+		<action name="filter" class="com.igate.uas.action.MacAction"
+			method="getFiltered">
+			<result name="success">/MacHome.jsp</result>
+		</action>
+	</package>
+
+	<package name="Applicant" extends="struts-default" namespace="/Resources/Applicant">
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+		<action name="addApplication" class="com.igate.uas.action.ApplicationAction"
+			method="addApplication">
+			<result name="success">applicationSuccess.jsp</result>
+			<result name="input">addApplication.jsp</result>
+		</action>
+
+		<action name="checkStatus" class="com.igate.uas.action.ApplicationAction"
+			method="showStatus">
+			<result name="success">checkStatus.jsp</result>
+			<result name="input">checkStatus.jsp</result>
+		</action>
+	</package>
+
 </struts>

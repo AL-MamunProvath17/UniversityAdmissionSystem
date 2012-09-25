@@ -16,8 +16,8 @@ Created on     : Aug 28, 2012
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<link href="css/style.css" type="text/css" rel="stylesheet" />
+<title>Error</title>
+<link href="CSS/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 <%@taglib uri="/struts-tags" prefix="s"%>
@@ -29,8 +29,6 @@ Exception Name &nbsp; : &nbsp;
 <s:property value="exception" />
 
 <br />
-Whats Wrong &nbsp; : &nbsp;
-<s:property value="exceptionStack" />
-
+<a href="HomePage.jsp">Go To HomePage</a>
 </body>
 </html>

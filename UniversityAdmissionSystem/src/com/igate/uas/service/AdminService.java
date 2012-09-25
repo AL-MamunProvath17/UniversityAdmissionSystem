@@ -19,7 +19,7 @@ public interface AdminService {
 	public boolean offerProgram(ProgramsOfferedBean programsOffered)
 			throws UASException;
 
-	public boolean scheduleProgram(ProgramScheduledBean programScheduled)
+	public boolean scheduleProgram(ProgramScheduledBean programScheduled, String appPath)
 			throws UASException;
 
 	public boolean addDegreeToCollege(String collegeId, String degreeId)
@@ -41,7 +41,7 @@ public interface AdminService {
 	public boolean deleteProgram(ProgramsOfferedBean programsOffered)
 			throws UASException;
 
-	public boolean removeMac(String loginId)
+	public boolean removeMac(String loginId, String scheduleProgramId)
 			throws UASException;
 	
 	// select methods
@@ -63,7 +63,18 @@ public interface AdminService {
 	
 	// xml methods
 	
-	public void createNavigationXML() throws UASException;
+	public void createNavigationXML(String appPath) throws UASException;
 	
-	public void createContentXML() throws UASException;
+	public void createContentXML(Map<CollegeBean, Map<DegreeBean, List<ProgramsOfferedBean>>> collegeMap, String appPath) throws UASException;
+	
+	//mac
+	
+	public List<String> macMembers() throws UASException;
+	
+	public Map<CollegeBean, Map<DegreeBean, List<ProgramsOfferedBean>>> getScheduledProgramsInYear()
+	throws UASException;
+	
+	public Map<String,Map<String, String>> getAssignedMac() throws UASException;
+
+	public boolean updateCollege(CollegeBean college) throws UASException;
 }

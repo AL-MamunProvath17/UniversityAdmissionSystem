@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="infoAppender" class="org.apache.log4j.FileAppender">
+		<param name="File" value="loggerInfo.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{dd-MM-yyyy HH:mm:ss} [%p] %c (%M) %n \t- %m %n \t %l %n%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="INFO" />
+			<param name="levelMax" value="INFO" />
+		</filter>
+	</appender>
+
+	<appender name="errorAppender" class="org.apache.log4j.FileAppender">
+		<param name="File" value="loggerError.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{dd-MM-yyyy HH:mm:ss} [%p] %c (%M) %x %n - \t %m %n \t %l %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="ERROR" />
+			<param name="levelMax" value="ERROR" />
+		</filter>
+	</appender>
+
+	<root>
+		<priority value="info" />
+		<appender-ref ref="infoAppender" />
+		<appender-ref ref="errorAppender" />
+	</root>
+</log4j:configuration>

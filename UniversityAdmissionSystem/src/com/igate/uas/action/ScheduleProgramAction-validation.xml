@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"  
+"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<field name="collegeId">
+		<field-validator type="requiredstring">
+			<message>Please select a College.</message>
+		</field-validator>
+	</field>
+
+	<field name="degreeId">
+		<field-validator type="requiredstring">
+			<message>Please select a Degree msg.</message>
+		</field-validator>
+	</field>
+
+	<field name="programId">
+		<field-validator type="requiredstring">
+			<message>Please select a Program.</message>
+		</field-validator>
+	</field>
+
+	<field name="startDate">
+		<field-validator type="required" short-circuit="true">
+			<param name="trim">true</param>
+			<message>End date required.</message>
+		</field-validator>
+		<field-validator type="date">
+			<param name="min">01/01/2012</param>
+			<param name="max">01/12/2013</param>
+			<message>Start date must be between ${min} and ${max}.</message>
+		</field-validator>
+	</field>
+
+	<field name="endDate">
+		<field-validator type="required" short-circuit="true">
+			<param name="trim">true</param>
+			<message>End date required.</message>
+		</field-validator>
+		<field-validator type="date">
+			<param name="min">01/01/2012</param>
+			<param name="max">01/12/2016</param>
+			<message>End date must be between ${min} and ${max}.</message>
+		</field-validator>
+	</field>
+
+	<field name="sessionPerWeek">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message>Enter total sessions per week.</message>
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<param name="max">10</param>
+			<message>Sessions per week must be between ${min} to ${max}.</message>
+		</field-validator>
+	</field>
+
+	<validator type="expression">
+		<param name="expression">startDate lt endDate</param>
+		<message>Start Date Must be Less Then the End Date.</message>
+	</validator>
+
+
+</validators>

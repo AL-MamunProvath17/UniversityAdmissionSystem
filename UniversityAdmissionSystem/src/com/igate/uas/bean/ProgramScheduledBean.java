@@ -1,8 +1,10 @@
 package com.igate.uas.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ProgramScheduledBean {
+@SuppressWarnings("serial")
+public class ProgramScheduledBean implements Serializable {
 
 	private String scheduledProgramId;
 	private Date startDate;

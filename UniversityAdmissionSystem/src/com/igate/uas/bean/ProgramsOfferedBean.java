@@ -1,6 +1,9 @@
 package com.igate.uas.bean;
 
-public class ProgramsOfferedBean {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class ProgramsOfferedBean implements Serializable{
 
 	private String programId;
 	private String programName;
@@ -124,4 +127,10 @@ public class ProgramsOfferedBean {
 		return this.programId.hashCode();
 	}
 
+	@Override
+	public String toString() {
+		return this.programName;
+	}
+
+	
 }

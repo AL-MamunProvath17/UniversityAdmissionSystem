@@ -1,15 +1,17 @@
 package com.igate.uas.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
 
-public class ApplicationBean {
+@SuppressWarnings("serial")
+public class ApplicationBean implements Serializable{
 	private String applicationId;
 	private String fullName;
 	private Date dateOfBirth;
 	private String highestQualification;
-	private float marks_obtained;	
+	private double marks_obtained;	
 	private String goals;
 	private String email_id;
 	private String scheduledProgramId;
@@ -21,13 +23,10 @@ public class ApplicationBean {
 	public ApplicationBean() {
 	
 	}
-
-
 	public ApplicationBean(String applicationId, String fullName,
-			Date dateOfBirth, String highestQualification, float marksObtained,
+			Date dateOfBirth, String highestQualification, double marksObtained,
 			String goals, String emailId, String scheduledProgramId,
 			String status, Date dateOfInterview, String loginId) {
-		super();
 		this.applicationId = applicationId;
 		this.fullName = fullName;
 		this.dateOfBirth = dateOfBirth;
@@ -41,8 +40,6 @@ public class ApplicationBean {
 		this.loginId = loginId;
 	}
 
-
-	
 
 	public String getApplicationId() {
 		return applicationId;
@@ -84,12 +81,12 @@ public class ApplicationBean {
 	}
 
 
-	public float getMarks_obtained() {
+	public double getMarks_obtained() {
 		return marks_obtained;
 	}
 
 
-	public void setMarks_obtained(float marksObtained) {
+	public void setMarks_obtained(double marksObtained) {
 		marks_obtained = marksObtained;
 	}
 

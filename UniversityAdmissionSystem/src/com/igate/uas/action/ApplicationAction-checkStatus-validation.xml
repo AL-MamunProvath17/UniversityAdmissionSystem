@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"  
+"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+<field name="applicationId">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>Please Enter Application Id</message>
+		</field-validator>
+		
+		<field-validator type="regex">
+			<param name="expression">au[0-9]{7}</param>
+			<message>Enter valid Application ID.</message>
+		</field-validator>
+		<!--
+		<field-validator type="regex">
+          <param name="expression">au[0-9]{7}</param>
+          <message>Enter Application Id in proper format </message>
+     </field-validator>
+	-->
+</field>
+</validators>

@@ -1,0 +1,87 @@
+<class-diagram version="1.0.10" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
+  <class id="1" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.service.AdminServiceImpl" 
+    project="UniversityAdmissionSystem" 
+    file="/UniversityAdmissionSystem/src/com/igate/uas/service/AdminServiceImpl.java" binary="false">    
+    <position x="-51" y="-148" width="605" height="544"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="2" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.service.ApplicantServiceImpl" 
+    project="UniversityAdmissionSystem" 
+    file="/UniversityAdmissionSystem/src/com/igate/uas/service/ApplicantServiceImpl.java" binary="false">    
+    <position x="594" y="-148" width="260" height="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="3" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.service.MacServiceImpl" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/service/MacServiceImpl.java" 
+    binary="false">    
+    <position x="894" y="-148" width="302" height="170"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="4" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.dao.AdminDAO" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/dao/AdminDAO.java" 
+    binary="false">    
+    <position x="-51" y="436" width="605" height="442"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface id="5" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.dao.MacDAO" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/dao/MacDAO.java" 
+    binary="false">    
+    <position x="894" y="436" width="302" height="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface id="6" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.dao.ApplicantDAO" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/dao/ApplicantDAO.java" 
+    binary="false">    
+    <position x="594" y="436" width="260" height="102"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <association id="7">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="8" name="macDao"/>      
+      <multiplicity id="9" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="10">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="11" name="applicantDaoInstance"/>      
+      <multiplicity id="12" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="13">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="14" name="adminDAO"/>      
+      <multiplicity id="15" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

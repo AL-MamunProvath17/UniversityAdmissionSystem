@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"  
+"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<field name="programName">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Enter Program Name.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">2</param>
+			<message>Program Name must be at least ${minLength} characters.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<message>Program Name must be at most ${maxLength} characters.</message>
+		</field-validator>
+	</field>
+	
+	<field name="applicantEligibility">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Enter Applicant Eligibility.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">2</param>
+			<message>Applicant Eligibility must be at least ${minLength} characters.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<message>Applicant Eligibility must be at most ${maxLength} characters.</message>
+		</field-validator>
+	</field>
+	
+	<field name="duration">
+		<field-validator type="required">
+			<param name="trim">true</param>
+			<message>Enter Duration of the Program.</message>
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<param name="max">9</param>
+			<message>Duration of the Program must be between ${min} to ${max} years.</message>
+		</field-validator>
+	</field>
+	
+	<field name="degreeCertificateOffered">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Enter the Degree Certificate Offered.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">2</param>
+			<message>Degree Certificate Offered must be at least ${minLength} characters.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<message>Degree Certificate Offered must be at most ${maxLength} characters.</message>
+		</field-validator>
+	</field>
+	
+	<field name="description">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Enter the description of the Program.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">20</param>
+			<message>Program description must be atleast ${minLength} characters.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">999</param>
+			<message>Program description must be at most ${maxLength} characters.</message>
+		</field-validator>
+	</field>
+	
+</validators>

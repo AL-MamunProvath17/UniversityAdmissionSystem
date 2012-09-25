@@ -1,0 +1,716 @@
+body { /*background-color:#414141;*/
+	background-color: rgb(65, 65, 65);
+}
+
+.links :HOVER {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.site-wrapper {
+	width: 1024px;
+	border: 0px solid blue;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header-bar {
+	width: 1020px;
+	height: 120px;
+	background-color: rgb(45, 45, 45);
+}
+
+.head-wrapper {
+	width: 1020px;
+	height: 275px;
+	border: 0px solid black;
+	background-image: url(header.jpg);
+	background-image: url(..//IMAGES//header.jpg);
+	text-align: center;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.head-logo {
+	float: left;
+	width: 200px;
+	height: 100px;
+	margin-left: 3%;
+	margin-top: 3%;
+}
+
+.logo {
+	position: relative;
+	left: 15px;
+	top: 10px;
+}
+
+.quote {
+	position: relative;
+	color: rgb(255, 174, 77); /*orange*/
+	width: 430px;
+	height: 20px;
+	left: 600px;
+	text-align: left;
+	top: -30px;
+	font-size: 22px;
+	font-style: italic;
+}
+
+.head-text {
+	float: right;
+	width: 600px;
+	height: 50px;
+	position: relative;
+	left: -150px;
+	top: 10px;
+	font-size: 45px;
+	color: rgb(255, 120, 50); /*orange redish*/
+	font-style: normal;
+	word-spacing: 15px;
+	letter-spacing: 5px;
+}
+
+.menu-bar {
+	clear: both;
+	float: left;
+	width: 1020px;
+	height: 40px;
+	margin: 0px;
+	/*background-color:#ffcc00;*/
+	font-style: bold;
+	color: black;
+}
+
+.menu-item {
+	width: 202px;
+	height: 40px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 2px;
+	/*padding-top:10px;*/
+	float: left;
+	color: rgb(65, 65, 65);
+	background-color: rgb(255, 204, 0);
+}
+
+.menu-item :LINK {
+	color: rgb(65, 65, 65);
+	text-decoration: none;
+}
+
+.menu-item :VISITED {
+	color: rgb(65, 65, 65);
+	text-decoration: none;
+}
+
+.menu-item :ACTIVE {
+	color: red;
+}
+
+.menu-item  A :HOVER {
+	color: rgb(255, 204, 0);
+}
+
+.menu-item span {
+	position: relative;
+	top: 7px;
+}
+
+.menu-item:hover {
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	border-left: 1px solid #414141;
+	color: rgb(255, 204, 0);
+	/*padding-top:10px;*/ float : left;
+	background-color: rgb(65, 65, 65);
+	float: left;
+}
+
+.line {
+	float: left;
+	width: 1020px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	color: #ffcc00;
+}
+
+.loginbutton :HOVER
+{
+ background-color:black;
+}
+
+.line3 {
+	color: rgb(255, 174, 77); /*orange*/
+}
+
+.menu-bar ul {
+	padding-left: 0px;
+	float: left;
+	margin: 0px;
+}
+
+.menu-bar li {
+	list-style: none;
+	float: left;
+	margin-left: 20px;
+}
+
+/* BODY STYLES */
+.body-wrapper {
+	float: left;
+	width: 1022px;
+	height: auto;
+	border: 0px solid blue;
+	margin: 0px;
+	background-color: ;
+}
+
+.navigation {
+	background-color: ;
+	float: left;
+	width: 230px;
+	min-height: 565px;
+	font-style: italic;
+	border-right: 0px solid #cccccc;
+	margin-top: 10px;
+}
+
+.navigationMAC {
+	background-color: ;
+	float: left;
+	width: 200px;
+	min-height: 565px;
+	font-style: italic;
+	border-right: 0px solid #cccccc;
+	margin-top: 10px;
+}
+
+/* HOME PAGE NAVIGATION SPECIFIC*/
+.navigation .college-nav {
+	left: 0px;
+	top: 0px;
+	margin-left: 10px;
+	border: 1px aqua #cccccc;
+	background-color: ;
+	color: rgb(255, 174, 77); /*orange*/
+	font-size: 24px;
+}
+
+.navigation .degree-nav {
+	height: 0px;
+	color: Red;
+	overflow: hidden;
+	font-size: 22px;
+	margin-left: 15px;
+	color: rgb(255, 120, 50); /*orange redish*/
+}
+
+.navigation .course-nav {
+	height: 0px;
+	overflow: hidden;
+	font-size: 20px;
+	margin-left: 15px;
+	color: rgb(255, 70, 0); /*red*/
+}
+
+.navigation .course-nav :HOVER {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* ADMIN PAGE SPECIFIC */
+.notification {
+	background-color: ;
+	color: rgb(255, 70, 0); /*red*/
+	float: left;
+	width: 180px;
+	min-height: 150px;
+	font-size: 24px;
+	border-bottom: 1px solid rgb(255, 174, 77);
+}
+
+/*
+.notification:HOVER {
+	background-color: white;
+	color: red;
+	float: left;
+	width: 180px;
+	min-height: 200px;
+	font-size: 24px;
+	border-bottom: 1px dashed rgb(255, 174, 77);
+}*/
+.admintools {
+	background-color: ;
+	float: left;
+	width: 180px;
+	font-size: 24px;
+	font-style: normal;
+	/*color: #FFAE4D;*/
+	color: rgb(255, 70, 0); /*red*/
+	min-height: 350px;
+	margin-top: 10px;
+}
+
+.admintools ul {
+	padding-left: 0px;
+	margin: 0px;
+	font-size: 20px;
+	color: rgb(255, 174, 77);
+}
+
+.admintools li {
+	list-style: none;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	/*border-bottom: 2px solid rgb(255, 174, 77);*/
+	border-bottom: 1px solid red;
+	padding: 2px;
+}
+
+.admintools li:HOVER {
+	list-style: none;
+	background-color: rgb(45, 45, 45);
+}
+
+.collegeform {
+	background-color: white;
+	color: yellow;
+}
+
+.tableclass {
+	background-color: rgb(45, 45, 45);
+	color: rgb(255, 174, 77);
+	border: black;
+	padding: 2px;
+}
+
+.tableclassButton {
+	background-color: rgb(45, 45, 45);
+	color: rgb(255, 174, 77);
+	border: black;
+	padding: 2px;
+	cursor: pointer;
+}
+
+.tableclass :focus {
+	color: rgb(255, 174, 77);
+	border-width: 2px;
+	padding: 2px;
+}
+
+.tableclass TH {
+	color: rgb(255, 204, 0);
+}
+
+.macTable {
+	background-color: rgb(45, 45, 45);
+	color: rgb(255, 174, 77);
+	border: black;
+	padding: 2px;
+	font-size: 18px;
+	text-align: center;
+	/*width: 100%;*/
+}
+
+.macTable :VISITED {
+	color: rgb(255, 174, 77);
+}
+
+.macTable :ACTIVE {
+	color: rgb(255, 174, 77);
+}
+
+.macTable :LINK {
+	color: rgb(255, 174, 77);
+}
+
+.macTable TH {
+	color: rgb(255, 204, 0);
+}
+
+/*
+.macTable TR :HOVER
+{
+	color:red;
+}*/ /*.tableclass INPUT
+ {
+  background-color:;
+  color:blue;
+ }*/ /* MAC PAGE SPECIFIC */
+.mactools {
+	background-color: ;
+	float: left;
+	width: 180px;
+	font-size: 24px;
+	font-style: italic;
+	color: rgb(255, 70, 0); /*red*/
+	min-height: 350px;
+	margin-top: 10px;
+}
+
+.mactools ul {
+	padding-left: 0px;
+	margin: 0px;
+	/*color: #FFAE4D;*/
+	color: red;
+	font-size: 20px;
+}
+
+.mactools li {
+	list-style: none;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	background-color: ;
+	border-bottom: 1px solid red;
+}
+
+.mactools li A {
+	color: rgb(255, 120, 50);
+	text-decoration: none;
+}
+
+.mactools li :VISITED {
+	color: rgb(255, 120, 50);
+	text-decoration: none;
+}
+
+.mactools li:HOVER {
+	list-style: none;
+	margin: 0px;
+	width: 200px;
+	outline-width: thick;
+	background-color: rgb(45, 45, 45);
+}
+
+/**/
+.main {
+	float: left;
+	width: 805px;
+	margin-top: 10px;
+	min-height: 565px;
+	margin-left: 10px;
+	border-left: 1px solid #cccccc;
+	color: rgb(255, 204, 0);
+	background-color: ;
+}
+
+#mainId {
+	float: left;
+	width: 580px;
+	margin-top: 10px;
+	min-height: 585px;
+	margin-left: 5px;
+	color: rgb(255, 204, 0);
+	background-color: ;
+}
+
+#mainIdMAC {
+	float: left;
+	width: 820px;
+	margin-top: 10px;
+	min-height: 565px;
+	color: rgb(255, 204, 0);
+	background-color: rgb(45, 45, 45);
+	position: relative;
+	left: -10px
+}
+
+#mainIdMAC H1 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.main-gen {
+	float: left;
+	width: 805px;
+	margin-top: 10px;
+	min-height: 850px;
+	margin-left: 0px;
+	border: 1px solid rgb(255, 174, 77);
+	color: rgb(255, 204, 0);
+	background-color: ;
+}
+
+.main-form {
+	float: left;
+	width: 805px;
+	margin-top: 10px;
+	min-height: 1200px;
+	margin-left: 0px;
+	border: 1px solid rgb(255, 174, 77);
+	color: rgb(255, 204, 0);
+	background-color: ;
+}
+
+.maincontent {
+	float: left;
+	width: 535px;
+	min-height: 565px;
+	border-right: 1px solid #cccccc;
+	color: rgb(255, 204, 0);
+	font-size: 20px;
+	font-style: italic;
+	padding-left: 8px;
+	padding-right: 15px;
+	font-family: ;
+	background-color: ;
+}
+
+.maincontent H3 {
+	color: rgb(255, 120, 50); /*orange redish*/
+}
+
+.maincontent H2 {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.maincontentform {
+	float: left;
+	width: 805px;
+	min-height: 865px;
+	border-top: 10px;
+	border-left: 1px solid #cccccc;
+	/*	color:red;*/
+}
+
+.maincontentform TD {
+	color: yellow;
+}
+
+.maincontent-admin {
+	float: left;
+	width: 805px;
+	height: 565;
+	margin-left: 10;
+	margin-top: 10;
+	color: yellow;
+	background-color: ;
+	border-left: 0px solid #cccccc;
+}
+
+.rightSideBar {
+	float: left;
+	width: 150px;
+	height: 565px;
+	padding-left: 10px;
+	margin-top: 10px;
+	font-style: italic;
+	color: #FFAE4D;
+	background-color: ;
+}
+
+.right-sub1 {
+	float: top;
+	width: 222px;
+	height: 270px;
+	border: 0px solid #cccccc;
+}
+
+.right-sub11 {
+	width: 210px;
+	height: 50px;
+	margin-top: 5px;
+	border: 0px solid #cccccc;
+	margin-left: 10;
+}
+
+.right-sub12 {
+	width: 210px;
+	height: 180px;
+	margin-top: 15px;
+	border: 0px solid #cccccc;
+	color: #FFAE4D;
+	background-color: ;
+	margin-left: 10;
+}
+
+.status {
+	width: 222px;
+	height: 25px;
+	border: 0px solid #cccccc;
+}
+
+.right-sub2 {
+	width: 222px;
+	height: 235px;
+	margin-top: 20;
+	border: 0px solid #cccccc;
+	border-top-width: 1;
+	text-align: left;
+	padding-left: 7px;
+	background-color: ;
+}
+
+.marquee {
+	width: 220px;
+	height: 180px;
+}
+
+/* FOTTER STYLES */
+.line2 {
+	float: left;
+	width: 1024px;
+	margin-top: 10px;
+	background-color: #cccccc;
+}
+
+.fotter {
+	clear: both;
+	width: 1024px;
+	height: 35px;
+	border: 0px solid black;
+	text-align: right;
+	font-size: 24px;
+	color: #cccccc;
+}
+
+.fotter span {
+	position: relative;
+	top: 3px;
+}
+
+/* STRUTS SPECIFIC */
+.errorMessage {
+	color: rgb(255, 70, 0); /*red*/
+	font-size: 20px;
+}
+
+.tableRow {
+	height: 95px;
+	vertical-align: middle;
+	font-size: 25px;
+}
+
+.label {
+	color: rgb(255, 204, 0);
+	font-size: 20px;
+}
+
+.collegeForm {
+	color: rgb(255, 204, 0);
+	font-size: 20px;
+}
+
+.tableTitle {
+	text-align: right;
+	width: 250px;
+	height: 30px;
+}
+
+.tableClass SELECT {
+	text-align: right;
+	width: 250px;
+	height: 30px;
+}
+
+.tableTitles {
+	text-align: right;
+	width: 250px;
+	height: 15px;
+}
+
+.tableClasss{
+	text-align: right;
+	width: 250px;
+	height: 15px;
+	color: rgb(255, 204, 0);
+}
+
+.actionMessage {
+	color: green;
+}
+
+.filterButton {
+	visibility: hidden;
+}
+
+table .tableData {
+	width: 300px;
+}
+
+.header {
+	color: rgb(255, 174, 77); /*orange*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+//
+static Content
+
+.contactus {
+	background-color: rgb(230, 230, 230);
+	font-size: 18px;
+	color: black;
+}
+
+.admissions {
+	padding: 40px;
+	color: black;
+	font-size: 18px;
+	background-color: rgb(230, 230, 230);
+	width: 940px;
+	height: 400px;
+}
+
+.faculty {
+	padding: 40px;
+	background-color: rgb(230, 230, 230);
+	font-size: 18px;
+	color: black;
+	width: 940px;
+	height: 1600px;
+}
+
+.faculty H3 {
+	color: #FFAE4D;
+}
+
+.lifeAtUniversity {
+	min-height: 300px;
+	padding: 40px;
+	font-size: 18px;
+	background-color: rgb(230, 230, 230);
+	color: black;
+}
+
+.lifeAtUniversity H3 {
+	color: #FFAE4D;
+}
+
+/* slideshow css*/
+#slideshow {
+	position: relative;
+	height: 249px;
+}
+
+#slideshow IMG {
+	position: absolute;
+	top: 4px;
+	left: 3px;
+	z-index: 8;
+	height: 249px;
+	width: 1022px;
+}
+
+#slideshow IMG.active {
+	z-index: 10;
+}
+
+#slideshow IMG.last-active {
+	z-index: 9;
+	border-style: 
+}
+
+.post {
+	margin-bottom: 8px;
+	/*background: url(images/img09.jpg) repeat-y left top;
+	*/
+}
+/* end slideshow css */

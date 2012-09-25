@@ -15,14 +15,30 @@ import oracle.jdbc.pool.OracleDataSource;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.helpers.Loader;
+import org.apache.log4j.xml.DOMConfigurator;
 
 import com.igate.uas.exception.UASException;
-
+/**
+*
+* File Name : AdminDAO.java
+* Class Name : AdminDAO
+* Description : DBConnection
+* Created On : Sep 17, 2012
+* @author : jb804412
+* 
+*/
 public class DBConnection {
-	static Logger logger = Logger.getLogger(DBConnection.class);
+	static Logger logger;
 	
 	static DataSource dataSource = null;
 
+	static{
+		URL url = Loader.getResource("loggerConfig.xml");
+        logger = Logger.getLogger(DBConnection.class);
+        DOMConfigurator.configure(url);
+
+	}
+	
 	public static Connection getConnection() throws UASException {
 
 		InitialContext ic;

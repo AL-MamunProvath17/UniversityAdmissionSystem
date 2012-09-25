@@ -1,0 +1,207 @@
+<class-diagram version="1.0.10" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
+  <class id="1" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.action.ScheduleProgramAction" 
+    project="UniversityAdmissionSystem" 
+    file="/UniversityAdmissionSystem/src/com/igate/uas/action/ScheduleProgramAction.java" binary="false">    
+    <position x="191" y="-116" width="326" height="204"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="2" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.action.LoginAction" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/action/LoginAction.java" 
+    binary="false">    
+    <position x="1291" y="55" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="3" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.action.CollegeAction" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/action/CollegeAction.java" 
+    binary="false">    
+    <position x="1627" y="29" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="4" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.action.ApplicationAction" 
+    project="UniversityAdmissionSystem" 
+    file="/UniversityAdmissionSystem/src/com/igate/uas/action/ApplicationAction.java" binary="false">    
+    <position x="702" y="-6" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="5" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.action.AdminAction" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/action/AdminAction.java" 
+    binary="false">    
+    <position x="428" y="663" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="6" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.action.OfferProgramAction" 
+    project="UniversityAdmissionSystem" 
+    file="/UniversityAdmissionSystem/src/com/igate/uas/action/OfferProgramAction.java" binary="false">    
+    <position x="1957" y="-3" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="7" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.action.MacAction" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/action/MacAction.java" 
+    binary="false">    
+    <position x="1007" y="168" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="8" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.action.DegreeAction" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/action/DegreeAction.java" 
+    binary="false">    
+    <position x="2224" y="4" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="9" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.bean.UserBean" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/bean/UserBean.java" 
+    binary="false">    
+    <position x="1293" y="351" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="false" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="10" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.bean.CollegeBean" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/bean/CollegeBean.java" 
+    binary="false">    
+    <position x="1604" y="409" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="false" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="11" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.bean.ApplicationBean" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/bean/ApplicationBean.java" 
+    binary="false">    
+    <position x="692" y="321" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="false" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="12" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.bean.ProgramScheduledBean" 
+    project="UniversityAdmissionSystem" 
+    file="/UniversityAdmissionSystem/src/com/igate/uas/bean/ProgramScheduledBean.java" binary="false">    
+    <position x="338" y="253" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="false" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="13" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.bean.ProgramsOfferedBean" 
+    project="UniversityAdmissionSystem" 
+    file="/UniversityAdmissionSystem/src/com/igate/uas/bean/ProgramsOfferedBean.java" binary="false">    
+    <position x="1900" y="513" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="false" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="14" corner="BOTTOM_RIGHT" language="java" name="com.igate.uas.bean.DegreeBean" 
+    project="UniversityAdmissionSystem" file="/UniversityAdmissionSystem/src/com/igate/uas/bean/DegreeBean.java" 
+    binary="false">    
+    <position x="2166" y="649" width="-1" height="-1"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="false" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <dependency id="15">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="16">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <association id="17">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="18" name="degree"/>      
+      <multiplicity id="19" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="20">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="21" name="college"/>      
+      <multiplicity id="22" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="23">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="24">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="25" name="application"/>      
+      <multiplicity id="26" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="27">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="28" name="programScheduled"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="30">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="31" name="programsOffered"/>      
+      <multiplicity id="32" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="33">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="34" name="user"/>      
+      <multiplicity id="35" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="36">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <association id="37">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="38" name="application"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

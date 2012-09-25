@@ -1,6 +1,9 @@
 package com.igate.uas.bean;
 
-public class UserBean {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class UserBean implements Serializable{
 	private String loginId;
 	private String password;
 	private String role;

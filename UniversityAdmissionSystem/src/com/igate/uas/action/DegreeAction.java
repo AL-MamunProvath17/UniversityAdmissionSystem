@@ -7,6 +7,15 @@ import com.igate.uas.service.AdminServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
+/**
+ *
+ * File Name : DegreeAction.java
+ * Class Name : DegreeAction
+ * Description : Degree Action
+ * Created On : Sep 17, 2012
+ * @author : jb804412
+ * 
+ */
 @SuppressWarnings("serial")
 public class DegreeAction extends ActionSupport implements
 		ModelDriven<DegreeBean> {
@@ -19,6 +28,16 @@ public class DegreeAction extends ActionSupport implements
 		return degree;
 	}
 
+	/**
+	 *
+	 * @Method_Name addDegree
+	 * @Description adds Degree
+	 * @Created_On Sep 15, 2012
+	 * @author jb804412
+	 * @throws Exception
+	 * 
+	 * returns : String
+	 */
 	public String addDegree() throws Exception{
 		AdminService adminService = getServiceObject();
 		boolean result = adminService.addDegree(degree);

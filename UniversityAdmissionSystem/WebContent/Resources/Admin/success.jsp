@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@taglib uri="/struts-tags" prefix="s"%>
 
-<a href = "LoadCollegeDegree.action">Degree to College</a><br/>
-<a href = "LoadCollegeDegreeProgram.action">Program To Degree</a><br/>
-<a href = "LoadScheduleDataAction.action">Schedule Programs</a><br/>
+<s:actionmessage/>
+
 </body>
 </html>
